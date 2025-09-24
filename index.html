@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ImpulseX - Transforma tu Potencial en Resultados Reales</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f5f5f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 2rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-weight: 800;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      color: #00ffc8;
+      user-select: none;
+    }
+
+    header nav a {
+      color: #a0f0d8;
+      margin-left: 2rem;
+      font-weight: 600;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    header nav a:hover {
+      color: #00ffc8;
+    }
+
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    main h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #00ffc8, #00d1ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    main p.subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      color: #b0e9d7;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      background: #00ffc8;
+      color: #0f2027;
+      font-weight: 700;
+      padding: 1.3rem 3.5rem;
+      font-size: 1.25rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 255, 200, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0, 255, 200, 0.9);
+    }
+
+    section.features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 2.5rem;
+      margin-top: 4rem;
+      color: #d0f8e8;
+      text-align: left;
+    }
+
+    section.features article {
+      background: rgba(0, 255, 200, 0.1);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 255, 200, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    section.features article:hover {
+      background: rgba(0, 255, 200, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 255, 200, 0.4);
+      transform: translateY(-8px);
+    }
+
+    section.features h3 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: #00ffc8;
+      letter-spacing: 0.05em;
+    }
+
+    section.features p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #aaf0d9;
+    }
+
+    section.testimonials {
+      margin-top: 5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-style: italic;
+      color: #9ef3d6;
+      position: relative;
+    }
+
+    section.testimonials::before {
+      content: '“';
+      font-size: 6rem;
+      color: #00ffc8;
+      position: absolute;
+      left: 10px;
+      top: -20px;
+      opacity: 0.2;
+      font-weight: 900;
+      font-family: serif;
+    }
+
+    section.testimonials p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    section.testimonials footer {
+      font-style: normal;
+      font-weight: 700;
+      color: #00ffc8;
+    }
+
+    section.contact {
+      background: rgba(0, 255, 200, 0.1);
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      max-width: 700px;
+      margin: 4rem auto 2rem;
+      box-shadow: 0 10px 30px rgba(0, 255, 200, 0.3);
+      color: #0f2027;
+      text-align: left;
+    }
+
+    section.contact h2 {
+      color: #00ffc8;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      resize: vertical;
+      font-family: 'Inter', sans-serif;
+      box-shadow: inset 0 0 6px rgba(0,0,0,0.15);
+      transition: box-shadow 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: inset 0 0 10px #00ffc8;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    button.submit-btn {
+      background-color: #00ffc8;
+      color: #0f2027;
+      font-weight: 700;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 255, 200, 0.6);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    }
+
+    button.submit-btn:hover {
+      background-color: #00d1ff;
+      box-shadow: 0 15px 40px rgba(0, 209, 255, 0.9);
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #0f2027;
+      color: #333;
+      text-align: center;
+      padding: 1rem 1.5rem;
+      font-size: 0.9rem;
+      user-select: none;
+      border-top: 1px solid #203a43;
+    }
+
+    @media (max-width: 600px) {
+      main h1 {
+        font-size: 2.5rem;
+      }
+      .cta-btn {
+        width: 100%;
+        padding: 1.3rem 0;
+      }
+      section.features {
+        grid-template-columns: 1fr;
+      }
+      section.contact {
+        margin: 3rem 1rem 2rem;
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" aria-label="Logo ImpulseX">ImpulseX</div>
+    <nav role="navigation" aria-label="Menú principal">
+      <a href="#features">Características</a>
+      <a href="#testimonials">Testimonios</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Transforma tu potencial en resultados reales</h1>
+    <p class="subtitle">ImpulseX es la plataforma que te acompaña para convertir tus ideas en proyectos exitosos, con estrategias claras, tecnología de punta y un equipo dedicado a tu crecimiento.</p>
+    <a href="#contact" class="cta-btn">Comienza ahora</a>
+
+    <section id="features" class="features" aria-label="Características principales">
+      <article>
+        <h3>Estrategia basada en datos</h3>
+        <p>Decisiones inteligentes con información real para maximizar cada paso de tu proyecto.</p>
+      </article>
+      <article>
+        <h3>Automatización eficiente</h3>
+        <p>Optimiza procesos con herramientas que ahorran tiempo y reducen errores, para que puedas enfocarte en crecer.</p>
+      </article>
+      <article>
+        <h3>Soporte 24/7</h3>
+        <p>Nuestro equipo está siempre disponible para resolver tus dudas y ayudarte a superar obstáculos.</p>
+      </article>
+    </section>
+
+    <section id="testimonials" class="testimonials" aria-label="Testimonios de clientes">
+      <p>"Gracias a ImpulseX, lancé mi startup sin perder semanas en tareas manuales y ahora estoy creciendo mes a mes. ¡Un cambio total!"</p>
+      <footer>- Laura M., CEO de GreenLeaf</footer>
+    </section>
+
+    <section id="contact" class="contact" aria-label="Formulario de contacto">
+      <h2>Contacto</h2>
+      <form id="contactForm" action="mailto:contacto@impulsex.com" method="POST" enctype="text/plain" novalidate>
+        <input type="text" name="nombre" placeholder="Tu nombre" required aria-required="true" />
+        <input type="email" name="email" placeholder="Tu correo electrónico" required aria-required="true" />
+        <textarea name="mensaje" placeholder="Tu mensaje" required aria-required="true"></textarea>
+        <button type="submit" class="submit-btn">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 ImpulseX · Contáctanos: contacto@impulsex.com
+  </footer>
+
+  <script>
+    // Validación simple para mejorar UX (no sustituye validación backend)
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      const nombre = form.nombre.value.trim();
+      const email = form.email.value.trim();
+      const mensaje = form.mensaje.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!nombre || !email || !mensaje) {
+        e.preventDefault();
+        alert('Por favor, completa todos los campos antes de enviar.');
+        return;
+      }
+      if (!emailRegex.test(email)) {
+        e.preventDefault();
+        alert('Por favor, ingresa un correo electrónico válido.');
+      }
+    });
+  </script>
+</body>
+</html>
